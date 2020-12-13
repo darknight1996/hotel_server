@@ -1,5 +1,6 @@
 package hotel.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,9 +21,11 @@ public class Room {
     @JoinColumn(name="hotel_id", nullable=false)
     private Hotel hotel;
 
+    @JsonIgnore
     @OneToMany(mappedBy="room")
     private Set<RoomItem> roomItems;
 
+    @JsonIgnore
     @OneToMany(mappedBy="room")
     private Set<RoomOrder> roomOrders;
 

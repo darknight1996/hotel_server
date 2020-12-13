@@ -20,6 +20,8 @@ public class Guest {
 
     private String lastName;
 
+    private String email;
+
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date birthDate;
 
